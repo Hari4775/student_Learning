@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./delete-modal.scss";
 
 // icons
 import { ReactComponent as TrashIcon } from "../../../assets/icons/icon-trash.svg";
 import { ReactComponent as CircleCloseIcon } from "../../../assets/icons/icon-close-circle.svg";
+import { deleteAccount } from "../../../redux/pages/profileSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const DeleteModal = () => {
+
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const dispatch = useDispatch<any>();
+  const navigate = useNavigate();
+
+  
+  const deleteHandler =()=>{
+     dispatch(deleteAccount(setIsSuccess))
+  }
+  
+  useEffect(() => {
+     if (isSuccess) {
+       navigate("/login");
+       setIsSuccess(false);
+     }
+   }, [isSuccess]);
+
+
   return (
     <div>
       <div
@@ -42,6 +63,8 @@ const DeleteModal = () => {
               <button
                 type="button"
                 className="btn btn-sm btn-danger"
+                onClick={deleteHandler}
+
                 // data-bs-dismiss="modal"
                 // onClick={onConfirm}
               >
@@ -54,6 +77,7 @@ const DeleteModal = () => {
                 type="button"
                 className="btn btn-sm btn-outline-black close-modal-btn"
                 data-bs-dismiss="modal"
+
                 // onClick={() => showModal(false)}
               >
                 Cancel
