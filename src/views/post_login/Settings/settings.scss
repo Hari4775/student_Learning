@@ -1,0 +1,213 @@
+@import "../../../assets/styles/variables";
+
+.settings-page {
+  padding-bottom: 70px;
+  @media (max-width: 992px) {
+    padding-bottom: 40px;
+  }
+
+  .setting-wrapper {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .title-section {
+    .section-title {
+      font-size: 36px;
+      color: $black;
+      font-weight: $font-weight-medium;
+      margin-bottom: 16px;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .tab-section {
+    .nav-wrap {
+      width: fit-content;
+      @media (max-width: 576px) {
+        width: 100%;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .nav-pills {
+        flex-wrap: nowrap;
+        border-bottom: 4px solid $tertiary;
+        width: fit-content;
+        .nav-item {
+          margin-right: 40px;
+          margin-bottom: 4px;
+          .nav-link {
+            font-size: 20px;
+            font-weight: $font-weight-light-medium;
+            padding: 0;
+            position: relative;
+            transition: all 0.4 ease;
+            box-shadow: none;
+            &:hover {
+              font-weight: $font-weight-bold;
+            }
+            &.active {
+              font-weight: $font-weight-bold;
+              background-color: transparent;
+              color: $primary;
+              &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                background-color: $primary;
+                left: 0;
+                bottom: -8px;
+              }
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .tab-content {
+      min-height: 300px;
+      @media (max-width: 768px) {
+        min-height: auto;
+      }
+      .mw-962 {
+        max-width: 962px;
+      }
+      .tab-title-wrap {
+        margin-bottom: 36px;
+        @media (max-width: 768px) {
+          margin-bottom: 24px;
+        }
+        .tab-title {
+          font-size: 20px;
+          color: $black;
+          font-weight: $font-weight-medium;
+        }
+        .desc {
+          font-size: 16px;
+          color: $black;
+          font-weight: $font-weight-light-medium;
+          margin-top: 8px;
+        }
+      }
+      .avatar-wrap {
+        margin-bottom: 32px;
+        position: relative;
+        width: fit-content;
+        .avatar {
+          width: 124px;
+          height: 124px;
+          border-radius: 50%;
+          background-color: $grey-5;
+          overflow: hidden;
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            position: relative;
+          }
+        }
+        .placeholder-icon {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 0;
+          isolation: isolate;
+        }
+        .edit-btn {
+          position: absolute;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: $primary;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          bottom: 4px;
+          right: 10px;
+          z-index: 2;
+        }
+      }
+      .country-code-selector {
+        .form-control {
+          width: 100%;
+          height: 40px;
+          box-shadow: none;
+        }
+        .react-tel-input .selected-flag:focus:before,
+        .react-tel-input .selected-flag.open:before {
+          border: none;
+          box-shadow: none;
+        }
+        .react-tel-input .country-list {
+          // width: 480px;
+          @media (max-width: 576px) {
+            width: 300px;
+          }
+        }
+      }
+      .payment-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: $border-radius-sm;
+        background-color: $tertiary;
+        padding: 12px 24px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+        .course-title {
+          font-size: 16px;
+          font-weight: $font-weight-bold;
+          color: $black;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .text-wrap {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          justify-content: space-between;
+          .text {
+            font-size: 16px;
+            color: $black;
+            font-weight: $font-weight-light-medium;
+          }
+        }
+        @media (max-width: 992px) {
+          padding: 12px 16px;
+          .course-title {
+            font-size: 14px;
+          }
+          .text-wrap {
+            .text {
+              font-size: 14px;
+            }
+          }
+        }
+        @media (max-width: 768px) {
+          display: block;
+          .course-title {
+            margin-bottom: 8px;
+          }
+          .text-wrap {
+            gap: 16px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}

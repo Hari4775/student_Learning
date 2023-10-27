@@ -1,0 +1,66 @@
+@import "../../../assets/styles/variables";
+
+.category-card {
+  padding: 15px 12px;
+  border-radius: $border-radius-sm;
+  border: 2px solid $grey-2;
+  min-height: 240px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  position: relative;
+  z-index: 1;
+  &.selected {
+    border-width: 4px;
+    border-color: $primary-2;
+  }
+  @media (max-width: 768px) {
+    min-height: 180px;
+  }
+  .icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: $primary-1-opacity-20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+    @media (max-width: 768px) {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 4px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .category-card-title {
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 8px;
+    line-height: 24px;
+    color: $black;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 4px;
+      line-height: 20px;
+    }
+  }
+  .desc {
+    font-size: 14px;
+    font-weight: $font-weight-light-medium;
+    line-height: 20px;
+    color: $black;
+    @media (max-width: 768px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

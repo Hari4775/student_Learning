@@ -1,0 +1,83 @@
+@import "../../../assets/styles/variables";
+
+.delete-modal {
+  padding: 30px;
+  .modal-dialog {
+    width: 100%;
+    max-width: 500px !important;
+    .modal-content {
+      .modal-header {
+        border-bottom: none;
+        padding-bottom: 0;
+        .trash-circle-icon {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: rgba(178, 37, 37, 0.2);
+          padding: 8px;
+          svg {
+            path {
+              stroke: $primary;
+            }
+          }
+          @media (max-width: 768px) {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+      .modal-body {
+        .modal-title {
+          font-size: 20px;
+          font-weight: $font-weight-medium;
+          color: $black;
+          line-height: 30px;
+          margin-bottom: 8px;
+          @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        .modal-desc {
+          font-size: 16px;
+          font-weight: $font-weight-light-medium;
+          color: $black;
+          @media (max-width: 768px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+      .modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 30px;
+        border-top: none;
+        padding-top: 0;
+        .btn-sm {
+          height: 38px;
+          @media (max-width: 768px) {
+            width: 100%;
+          }
+        }
+        .btn-danger {
+          span {
+            margin-bottom: 3px;
+          }
+          svg {
+            width: 16px;
+            height: 16px;
+            path {
+              // fill: $white;
+              stroke: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

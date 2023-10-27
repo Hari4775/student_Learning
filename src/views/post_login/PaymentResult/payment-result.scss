@@ -1,0 +1,48 @@
+@import "../../../assets/styles/variables";
+
+.payment-result {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  @media (max-width: 992px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .status-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      font-size: 36px;
+      color: $black;
+      font-weight: $font-weight-medium;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+    .img-wrapper {
+      img {
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        max-width: 184px;
+      }
+      &.payment-success-img {
+        @media (max-width: 768px) {
+          max-width: 85px;
+        }
+      }
+    }
+    .desc {
+      font-size: 16px;
+      color: $black;
+      font-weight: $font-weight-light-medium;
+      text-align: center;
+      display: inline;
+      .btn {
+        white-space: nowrap;
+        padding: 0;
+        display: inline;
+      }
+    }
+  }
+}

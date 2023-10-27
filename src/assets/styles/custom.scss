@@ -1,0 +1,341 @@
+@import "./variables.scss";
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+//note for devs: import the bootstrap scss file at the bottom otherwise it will cause style overriding issues.
+@import "~bootstrap/scss/bootstrap.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $global-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 16px;
+  font-weight: $font-weight-light-medium;
+  margin-bottom: 0;
+  line-height: 24px;
+}
+
+.bg-primary-2 {
+  background-color: $primary-2;
+}
+
+button {
+  box-shadow: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.btn-lg {
+  padding: 12px 16px;
+  border-radius: $border-radius-sm;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: $font-weight-bold;
+}
+
+.btn-md {
+  padding: 8px 16px;
+  border-radius: $border-radius-sm;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: $font-weight-bold;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  border-radius: $border-radius-xs;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: $font-weight-bold;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-link {
+  text-decoration: none;
+  font-weight: $font-weight-bold;
+  padding: 0;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.btn-primary {
+  &:hover {
+    background-color: $primary-3;
+  }
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+  &:hover {
+    border-color: $primary-3;
+    color: $primary-3;
+    background-color: $primary-3-opacity;
+  }
+}
+
+.btn-outline-black {
+  border-width: 2px;
+  border-color: $black-2;
+  color: $black-2;
+  &:hover {
+    border-color: $black-2;
+    color: $white;
+    background-color: $black-2;
+  }
+}
+
+.btn-link-black {
+  color: $black-2;
+}
+
+.form-control-wrap {
+  text-align: left;
+  .form-label {
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    color: $black;
+    margin-bottom: 8px;
+    line-height: 24px;
+  }
+  .icon-form-control {
+    position: relative;
+    .start-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .end-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .start-icon + .form-control {
+      padding-left: 36px;
+    }
+  }
+  .form-control {
+    border-radius: $border-radius-sm;
+    color: $black;
+    // padding-left: 36px;
+    font-weight: $font-weight-medium;
+    border: 2px solid $border-clr;
+    box-shadow: none;
+    // height: 40px;
+    // box-shadow: 0 0 0 2px $border-clr;
+    &:focus {
+      //   box-shadow: 0 0 0 0.2rem $primary;
+      border-color: $primary;
+      border-width: 3px;
+    }
+  }
+  .validation-text {
+    font-size: 14px;
+    color: $danger;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.dropdown-menu {
+  background-color: $white;
+  filter: drop-shadow(0px 4px 4px rgba(143, 143, 143, 0.25));
+  border: none;
+  .dropdown-item {
+    &:hover {
+      background-color: $primary-4;
+    }
+  }
+}
+
+// custom input radio
+.form-radio-btn {
+  margin: 0 0 10px;
+  input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  }
+
+  input[type="radio"] + label {
+    position: relative;
+    padding: 1px 0 0 30px;
+    font-size: 14px;
+    color: $black;
+    font-weight: $font-weight-light-medium;
+    cursor: pointer;
+  }
+
+  input[type="radio"] + label:before {
+    content: "";
+    background: #fff;
+    border: 3px solid $primary;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  input[type="radio"] + label:after {
+    content: "";
+    background: $primary;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    opacity: 0;
+    transform: scale(2);
+    transition: transform 0.3s linear, opacity 0.3s linear;
+  }
+
+  input[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pagination {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  .page-item {
+    margin-bottom: 10px;
+    .page-link {
+      border-radius: 0;
+      border: none;
+      background-color: transparent;
+      font-size: 16px;
+      color: $primary;
+      font-weight: $font-weight-light-medium;
+      padding: 5px 5px;
+      margin-inline: 6px;
+      line-height: 1;
+      position: relative;
+      transition: 0.3s ease;
+      &:hover {
+        font-weight: $font-weight-bold;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    &:first-child,
+    &:last-child {
+      .page-link {
+        border-radius: $border-radius-sm;
+        border: 2px solid $primary;
+        padding: 6px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        line-height: 1;
+      }
+      &:hover {
+        .page-link {
+          background-color: $primary;
+          color: $white;
+          svg {
+            path {
+              stroke: $white;
+            }
+          }
+        }
+      }
+    }
+    &.active {
+      .page-link {
+        font-weight: $font-weight-bold;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          left: 0;
+          height: 3px;
+          background-color: $primary;
+        }
+      }
+    }
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+// scrollbar styles
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $scroll-bar-track-clr;
+  border-radius: $scroll-bar-border-radius;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $scroll-bar-thumb-clr;
+  border-radius: $scroll-bar-border-radius;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $scroll-bar-thumb-hover-clr;
+}

@@ -1,0 +1,67 @@
+@import "../../assets/styles/variables";
+
+.banner {
+  min-height: 260px;
+  background-color: $tertiary;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .banner-card {
+    background-color: $primary-2;
+    border-radius: $border-radius-lg;
+    padding: 16px 24px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    .banner-title {
+      font-size: 36px;
+      color: $white-2;
+      font-weight: $font-weight-medium;
+      margin-bottom: 4px;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+    .banner-description {
+      color: $grey-3;
+      font-size: 16pcx;
+      font-weight: $font-weight-light-medium;
+      line-height: 24px;
+      @media (max-width: 768px) {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+    @media (max-width: 992px) {
+      margin-top: 50px;
+    }
+    @media (max-width: 768px) {
+      border-radius: $border-radius-sm;
+      padding: 14px 16px;
+    }
+  }
+  .banner-illustration-wrap {
+    position: absolute;
+    right: 150px;
+    bottom: -28px;
+    @media (max-width: 1200px) {
+      right: 0px;
+    }
+    @media (max-width: 992px) {
+      right: -120px;
+    }
+    @media (max-width: 768px) {
+      max-width: 165px;
+      right: 0px;
+      bottom: -16px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    min-height: 290px;
+  }
+}

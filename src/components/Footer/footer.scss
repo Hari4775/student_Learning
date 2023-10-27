@@ -1,0 +1,105 @@
+@import "../../assets/styles/variables";
+
+.footer {
+  .footer-top {
+    padding: 36px 0;
+    border-bottom: 2px solid $primary-6;
+    .footer-logo-wrap {
+      .footer-logo {
+        width: 80px;
+      }
+    }
+    .company-moto {
+      font-size: 14px;
+      color: $grey-3;
+      font-weight: $font-weight-light-medium;
+      margin-top: 10px;
+    }
+    .link-wrapper {
+      .link-title {
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        color: $grey-2;
+        margin-bottom: 16px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          margin-bottom: 16px;
+          a {
+            font-size: 16px;
+            color: $white-2;
+            font-weight: $font-weight-light-medium;
+            line-height: 24px;
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              height: 2px;
+              background-color: $white-2;
+              width: 100%;
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: 0.3s ease;
+            }
+            &:hover {
+              &::before {
+                transform: scaleX(1);
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        margin-top: 42px;
+      }
+      @media (max-width: 768px) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .footer-bottom {
+    padding: 24px 0;
+    .copy-rights {
+      font-size: 14px;
+      color: $grey-3;
+      font-weight: $font-weight-light-medium;
+      @media (max-width: 992px) {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+    }
+    .sm-wrap {
+      width: auto;
+
+      .social-media-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .social-link {
+          position: relative;
+          svg {
+            width: 22px;
+            height: 22px;
+            transition: 0.3s all ease;
+            transform: scale(1);
+          }
+
+          &:hover,
+          &:focus {
+            svg {
+              transform: scale(1.3);
+            }
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

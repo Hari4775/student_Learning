@@ -1,0 +1,42 @@
+@import "../../../assets/styles/variables";
+
+.notifications-page {
+  padding-bottom: 70px;
+  @media (max-width: 992px) {
+    padding-bottom: 40px;
+  }
+
+  .notifications-wrapper {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .title-section {
+    .section-title {
+      font-size: 36px;
+      color: $black;
+      font-weight: $font-weight-medium;
+      margin-bottom: 16px;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+  }
+  .mw-780 {
+    max-width: 780px;
+  }
+  .subtitle {
+    font-size: 20px;
+    color: $black;
+    font-weight: $font-weight-medium;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  .notification-btn {
+    font-size: 16px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
